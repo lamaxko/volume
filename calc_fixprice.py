@@ -61,7 +61,12 @@ def main():
         for file in tqdm(stl_files, desc="Processing STL files"):
             volume, weight_silver_935, weight_gold_333, weight_gold_586 = calculate_volume_and_weight(file)
             price_silver_935, price_gold_333, price_gold_586, profit_silver_935, profit_gold_333, profit_gold_586 = calculate_price(weight_silver_935, weight_gold_333, weight_gold_586, material_price_silver_935, material_price_gold_333, material_price_gold_586)
-            csvwriter.writerow([file, volume, weight_silver_935, weight_gold_333, weight_gold_586, price_silver_935, price_gold_333, price_gold_586, profit_silver_935, profit_gold_333, profit_gold_586])
+            csvwriter.writerow([file, round(volume, 2), round(weight_silver_935, 2), round(weight_gold_333, 2), round(weight_gold_586, 2), round(price_silver_935, 2), round(price_gold_333, 2), round(price_gold_586, 2), round(profit_silver_935, 2), round(profit_gold_333, 2), round(profit_gold_586, 2)])
+        
+            
+        
+        
+        
     
 if __name__ == "__main__":
     main()
